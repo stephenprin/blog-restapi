@@ -5,6 +5,7 @@ import com.springboot.blog.blogrestapi.exception.ResourceNotFoundException;
 import com.springboot.blog.blogrestapi.payload.PostDto;
 import com.springboot.blog.blogrestapi.repository.PostRepository;
 import com.springboot.blog.blogrestapi.service.impl.PostService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
+    @PreAuthorize("hasRole('ADMIN')")
     public PostDto create_post(PostDto postDto) {
 
         Post post = mapToEntity(postDto);

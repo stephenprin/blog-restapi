@@ -5,6 +5,7 @@ import com.springboot.blog.blogrestapi.service.PostServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,11 +33,13 @@ public class PostController {
         return ResponseEntity.ok(postService.getPostId(id));
     }
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<PostDto>  updatePost(@RequestBody PostDto postDto, @PathVariable("id") long id){
         PostDto postResponse= postService.updatePost(postDto, id);
         return new ResponseEntity<>((postResponse), HttpStatus.OK);
     }
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<String> deletePost(@PathVariable("id") long id){
         postService.deletePostId(id);
         String message = "Post entity deleted successfully";

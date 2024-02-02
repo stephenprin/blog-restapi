@@ -1,4 +1,4 @@
-package com.springboot.blog.blogrestapi.service;
+package com.springboot.blog.blogrestapi.service.impl;
 
 import com.springboot.blog.blogrestapi.entity.Post;
 import com.springboot.blog.blogrestapi.exception.ResourceNotFoundException;

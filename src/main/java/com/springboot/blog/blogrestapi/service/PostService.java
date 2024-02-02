@@ -1,5 +1,4 @@
-package com.springboot.blog.blogrestapi.service.impl
-        ;
+package com.springboot.blog.blogrestapi.service;
 
 import com.springboot.blog.blogrestapi.payload.PostDto;
 

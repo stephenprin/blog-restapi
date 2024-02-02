@@ -1,7 +1,7 @@
 package com.springboot.blog.blogrestapi.controller;
 
 import com.springboot.blog.blogrestapi.payload.PostDto;
-import com.springboot.blog.blogrestapi.service.PostServiceImpl;
+import com.springboot.blog.blogrestapi.service.impl.PostServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
